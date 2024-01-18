@@ -1,18 +1,19 @@
 package com.example.baitap1.model;
 
 public class Product {
+    private int id;
     private String name;
     private String detail;
     private double price;
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", detail='" + detail + '\'' +
-                ", price=" + price +
-                '}';
+    public Product(int id, String name, String detail, double price) {
+        this.id = id;
+        this.name = name;
+        this.detail = detail;
+        this.price = price;
     }
+
+
 
     public Product() {
     }
@@ -45,5 +46,23 @@ public class Product {
         this.name = name;
         this.detail = detail;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", detail='" + detail + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

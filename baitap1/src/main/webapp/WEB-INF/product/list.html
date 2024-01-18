@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
+    <title>Index</title>
 </head>
 <body>
 <h1>List products</h1>
 <div th:if="${message}">
-    <span style="color: green;" th:text="${message}"></span>
+    <span style="color: #b0006d;" th:text="${message}"></span>
 </div>
 <button><a th:href="@{/products/add-product}">Create</a></button>
 <table border="1px solid black">
@@ -20,13 +20,14 @@
     </tr>
 
     <tr th:each="product, state : ${listProducts}">
+        <!--        <input type="hidden" th:text="${product.id}">-->
         <td th:text="${state.count}"></td>
         <td th:text="${product.name}"></td>
         <td th:text="${product.detail}"></td>
         <td th:text="${product.price}"></td>
         <td>
-            <button>edit</button>
-            <button>delete</button>
+            <a th:href="@{'/products/edit-product/'+ ${state.count} }">edit</a>
+            <a th:href="@{'/products/delete/'+ ${state.count}}">delete</a>
         </td>
 
     </tr>

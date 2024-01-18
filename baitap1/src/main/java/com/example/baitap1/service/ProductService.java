@@ -20,6 +20,15 @@ public class ProductService {
         productRepository.createProduct(product);
     }
 
-    public void delete(Long id) {
+    public void update(int id, Product product) {
+        productRepository.update(id, product);
+    }
+
+    public Product findById(int id) {
+        return productRepository.findById(id);
+    }
+
+    public void remove(int id) {
+        productRepository.remove(id);
     }
 }
